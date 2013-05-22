@@ -6,4 +6,6 @@ $app = new App\Application();
 require __DIR__.'/config/prod.php';
 App\Application::config($app);
 
+require __DIR__.'/../src/controllers.php';
+
 $app->run();

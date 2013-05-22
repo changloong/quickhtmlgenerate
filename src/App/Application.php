@@ -20,7 +20,11 @@ class Application extends \Silica\Application {
             $basename = substr(pathinfo( $filename , PATHINFO_BASENAME ) , 0 , 0 - 1 - strlen($ext) ) ;
             
             if( in_array($ext,  array('html', 'htm')) ) {
+                
                 $app['smarty']->assign( 'pagename', $basename ) ;
+                
+                $app['smarty']->assign( 'subpagename', $basename ) ;
+                
                 return $app['smarty']->fetch($filename) ;
             } else {
                 return file_get_contents($filename) ;
