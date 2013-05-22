@@ -19,7 +19,8 @@
         "php"  : ">=5.3.3" ,
 	"silica/silica": "dev-master" ,
 	"symfony/console": "2.3.*@dev" ,
-	"smarty/smarty": "dev-trunk"
+        "symfony/filesystem": "2.4.*@dev" ,
+        "twig/twig": "dev-master"
     },
     "autoload": {
         "psr-0": {

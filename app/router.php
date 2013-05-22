@@ -1,25 +1,24 @@
-<?php
+﻿<?php
 
-$return = false ;
+require __DIR__ . '/../vendor/autoload.php' ;
 
-if ( file_exists($_SERVER['SCRIPT_FILENAME']) ) {
-    
-    $ext = pathinfo( $_SERVER['SCRIPT_FILENAME'], PATHINFO_EXTENSION ) ;
-    
-    $catch_ext_list = array( 'html', 'htm' ) ;
-    
-    if(in_array($ext, $catch_ext_list) ) {
-        $return = true ;
-    }
+if( 'dev' === getenv('APP_ENV') ) {
+	ini_set('display_errors', 1);
+	$app = new App\Application();
+	require __DIR__.'/config/dev.php';
+} else {
+	ini_set('display_errors', 0);
+	$app = new App\Application();
+	require __DIR__.'/config/prod.php';
 }
 
-if( $return ) {
-    if( 'dev' === getenv('APP_ENV') ) {
-        require   __DIR__ . '/app_dev.php' ;
-    } else {
-        require   __DIR__ . '/app.php' ;
-    }
-    exit ;
-}
+App\Application::config($app);
 
-return false; 
+$data = $app['filter']( $_SERVER['SCRIPT_FILENAME'], false ) ;
+
+if( $data  ) {
+	echo $data ;
+        exit ;
+} else {
+	return false ;
+}
