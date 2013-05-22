@@ -1,0 +1,29 @@
+{
+    "name"        : "changloong/quickhtmlgenerate",
+    "description" : "quick html generage",
+    "repositories": {
+        "makeusabrew/bootbox" : {
+            "type": "package",
+            "package": {
+                "name": "makeusabrew/bootbox",
+                "version": "dev",
+                "source": {
+                    "url": "git://github.com/makeusabrew/bootbox.git",
+                    "type": "git",
+                    "reference": "origin/master"
+                }
+            }
+        } 
+    } ,
+    "require": {
+        "php"  : ">=5.3.3" ,
+	"silica/silica": "dev-master" ,
+	"symfony/console": "2.3.*@dev" ,
+	"smarty/smarty": "dev-trunk"
+    },
+    "autoload": {
+        "psr-0": {
+            "": "src/"
+        }
+    }
+}

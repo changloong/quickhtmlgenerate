@@ -1,0 +1,9 @@
+.DS_Store
+nbproject/
+vendor/
+composer.phar
+app/cache/*
+app/logs/*
+web/*
+public_html/*
+public_tpl/*
