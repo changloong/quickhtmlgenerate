@@ -3,8 +3,49 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "b5582bac68af3e59d79e2d6007e3072e",
+    "hash": "c2aba8290fd785f44e6cd0f22867cf1d",
     "packages": [
+        {
+            "name": "leafo/lessphp",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leafo/lessphp.git",
+                "reference": "dbb61d4beaafb0d708b79b008d0b708abeb4eae9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leafo/lessphp/zipball/dbb61d4beaafb0d708b79b008d0b708abeb4eae9",
+                "reference": "dbb61d4beaafb0d708b79b008d0b708abeb4eae9",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "lessc.inc.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Leaf Corcoran",
+                    "email": "leafot@gmail.com",
+                    "homepage": "http://leafo.net"
+                }
+            ],
+            "description": "lessphp is a compiler for LESS written in PHP.",
+            "homepage": "http://leafo.net/lessphp/",
+            "time": "2013-05-07 23:46:12"
+        },
         {
             "name": "silica/silica",
             "version": "dev-master",
@@ -210,6 +251,7 @@
         "silica/silica": 20,
         "symfony/console": 20,
         "symfony/filesystem": 20,
+        "leafo/lessphp": 20,
         "twig/twig": 20
     },
     "platform": {

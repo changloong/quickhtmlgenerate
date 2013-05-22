@@ -20,6 +20,7 @@
 	"silica/silica": "dev-master" ,
 	"symfony/console": "2.3.*@dev" ,
         "symfony/filesystem": "2.4.*@dev" ,
+        "leafo/lessphp": "dev-master" ,
         "twig/twig": "dev-master"
     },
     "autoload": {

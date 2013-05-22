@@ -60,8 +60,6 @@ $console
     })
 ;
 
-
-
 $console
     ->register('app:generate:html')
     ->setDescription('generage html pages')
@@ -86,6 +84,11 @@ $console
                 if( is_dir($_path) ) {
                     $gen( $_path, $_to_path);
                 } else {
+                    $ext = pathinfo( $_path , PATHINFO_EXTENSION ) ;
+                    if( 'less' == $ext ) {
+                        $_to_path   .= '.css' ;
+                    }
+                    
                     echo $_path , '->', $_to_path , "\n" ;
                     $data   = $app['filter']( $_path ) ;
                     file_put_contents($_to_path, $data) ;

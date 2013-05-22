@@ -7,7 +7,7 @@ $app['root_dir']    = __DIR__ . '/../../' ;
 $app['twig.templates']  = array() ;
 
 $app['twig.path']  = array(
-        __DIR__ . '/../../public_tpl' ,
+        __DIR__ . '/../../web_twig' ,
         __DIR__ . '/../../web' ,
     );
 

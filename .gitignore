@@ -5,5 +5,5 @@ composer.phar
 app/cache/*
 app/logs/*
 web/*
+web_twig/*
 public_html/*
-public_tpl/*

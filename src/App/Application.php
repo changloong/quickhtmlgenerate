@@ -13,10 +13,13 @@ class Application extends \Silica\Application {
         
         $app->protect('filter', function( $filename , $fetch_data = true ) use($app) {
             
+            if( '.less.css' == substr($filename, -9 ) ) {
+                $filename   = substr( $filename, 0, -4 ) ;
+            }
+            
             if( file_exists($filename) ) {
-                
                 $ext = pathinfo( $filename , PATHINFO_EXTENSION ) ;
-                
+            
                 $basename = substr(pathinfo( $filename , PATHINFO_BASENAME ) , 0 , 0 - 1 - strlen($ext) ) ;
 
                 if( in_array($ext,  array('html', 'htm')) ) {
@@ -28,6 +31,9 @@ class Application extends \Silica\Application {
                         'subpagename'  => $basename ,
                     )) ;
                     
+                } else if( $ext == 'less' ) {
+                    $less   = new \lessc() ;
+                    return $less->compileFile( $filename ) ;
                 } else if( $fetch_data ) {
                     return file_get_contents($filename) ;
                 }

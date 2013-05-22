@@ -14,7 +14,9 @@ if( 'dev' === getenv('APP_ENV') ) {
 
 App\Application::config($app);
 
-$data = $app['filter']( $_SERVER['SCRIPT_FILENAME'], false ) ;
+$filename   = $_SERVER['DOCUMENT_ROOT'] . $_SERVER['SCRIPT_NAME'] ;
+
+$data = $app['filter']( $filename , false ) ;
 
 if( $data  ) {
 	echo $data ;
